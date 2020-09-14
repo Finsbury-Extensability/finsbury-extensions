@@ -1,27 +1,29 @@
 metadataVersion: 1
 extensions:
-  - name: ValidateInvoiceDateInteractive
+  - name: CreateNewPallet
     triggers:
       - type: METHOD
-        program: MMS001
-        method: PEINZ
+        program: MMS177
+        method: PACHK
+        advice: PRE
+  - name: PrintLabel
+    triggers:
+      - type: METHOD
+        program: MMS177
+        method: PAUPD
         advice: POST
-      - type: METHOD
-        program: MMS002
-        method: PEINZ
-        advice: PRE
-    utilities:
-      - NumberUtils
-      - DateUtils
-  - name: ValidateInvoiceDateMI
+  - name: IssueMethod7Check
     triggers:
-      - type: TRANSACTION
-        program: MMS200MI
-        transaction: UpdItem
+      - type: METHOD
+        program: PMS060
+        method: PECHK
         advice: PRE
-    utilities:
-      - NumberUtils
-      - DateUtils
+  - name: IssueMethod7CheckForAPI
+    triggers:
+      - type: METHOD
+        program: PMS060MI
+        method: RptIssue
+        advice: PRE
 apis:
   - name: EXT001MI
     transactions:
