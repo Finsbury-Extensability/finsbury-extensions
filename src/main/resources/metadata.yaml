@@ -1,21 +1,238 @@
 metadataVersion: 1
 extensions:
-  - name: CustomerCreditCheckP1
+  - name: ValidateInvoiceDateInteractive
     triggers:
       - type: METHOD
-        program: CRS610
-        programType: INTERACTIVE
-        method: PJINZ
-        advice: PRE
-    priority: 500
-    utilities:
-  - name: CustomerCreditCheckP2
-    triggers:
-      - type: METHOD
-        program: CRS610
-        programType: INTERACTIVE
-        method: PJINZ
+        program: MMS001
+        method: PEINZ
         advice: POST
-    priority: 500
+      - type: METHOD
+        program: MMS002
+        method: PEINZ
+        advice: PRE
     utilities:
-
+      - NumberUtils
+      - DateUtils
+  - name: ValidateInvoiceDateMI
+    triggers:
+      - type: TRANSACTION
+        program: MMS200MI
+        transaction: UpdItem
+        advice: PRE
+    utilities:
+      - NumberUtils
+      - DateUtils
+apis:
+  - name: EXT001MI
+    transactions:
+      - name: LstLvl1Codes
+        description: List Level 1 code reason Codes
+        type: MULTI
+        inputs:
+          - name: ZPGM
+            description: program name
+            length: 10
+            type: ALPHANUMERIC
+            mandatory: false
+          - name: ZLV1
+            description: Level 1 Code
+            length: 3
+            type: ALPHANUMERIC
+            mandatory: false
+        outputs:
+          - name: PGNM
+            description: program name 
+            length: 10
+            type: ALPHANUMERIC
+          - name: ZLV1
+            description: Level 1 code
+            length: 3
+            type: ALPHANUMERIC
+          - name: TX40
+            description: description
+            length: 40
+            type: ALPHANUMERIC
+          - name: TX15
+            description: name
+            length: 15
+            type: ALPHANUMERIC
+      - name: LstLvl2Codes
+        description: List Level 2 code reason Codes
+        type: MULTI
+        inputs:
+          - name: ZPGM
+            description: program name
+            length: 10
+            type: ALPHANUMERIC
+            mandatory: true
+          - name: ZLV1
+            description: Level 1 Code
+            length: 3
+            type: ALPHANUMERIC
+            mandatory: true
+        outputs:
+          - name: PGNM
+            description: program name 
+            length: 10
+            type: ALPHANUMERIC
+          - name: ZLV1
+            description: Level 1 code
+            length: 3
+            type: ALPHANUMERIC
+          - name: ZLV2
+            description: Level 2 code
+            length: 3
+            type: ALPHANUMERIC
+          - name: TX40
+            description: description
+            length: 40
+            type: ALPHANUMERIC
+          - name: TX15
+            description: name
+            length: 15
+            type: ALPHANUMERIC
+      - name: LstLvl3Codes
+        description: List Level 3 code reason Codes
+        type: MULTI
+        inputs:
+          - name: ZPGM
+            description: program name
+            length: 10
+            type: ALPHANUMERIC
+            mandatory: true
+          - name: ZLV1
+            description: Level 1 Code
+            length: 3
+            type: ALPHANUMERIC
+            mandatory: true
+          - name: ZLV2
+            description: Level 2 Code
+            length: 3
+            type: ALPHANUMERIC
+            mandatory: true
+        outputs:
+          - name: PGNM
+            description: program name 
+            length: 10
+            type: ALPHANUMERIC
+          - name: ZLV1
+            description: Level 1 code
+            length: 3
+            type: ALPHANUMERIC
+          - name: ZLV2
+            description: Level 2 code
+            length: 3
+            type: ALPHANUMERIC
+          - name: ZLV3
+            description: Level 3 code
+            length: 3
+            type: ALPHANUMERIC
+          - name: TX40
+            description: description
+            length: 40
+            type: ALPHANUMERIC
+          - name: TX15
+            description: name
+            length: 15
+            type: ALPHANUMERIC
+      - name: LstLvl4Codes
+        description: List Level 4 code reason Codes
+        type: MULTI
+        inputs:
+          - name: ZPGM
+            description: program name
+            length: 10
+            type: ALPHANUMERIC
+            mandatory: true
+          - name: ZLV1
+            description: Level 1 Code
+            length: 3
+            type: ALPHANUMERIC
+            mandatory: true
+          - name: ZLV2
+            description: Level 2 Code
+            length: 3
+            type: ALPHANUMERIC
+            mandatory: true
+          - name: ZLV3
+            description: Level 3 Code
+            length: 3
+            type: ALPHANUMERIC
+            mandatory: true
+        outputs:
+          - name: PGNM
+            description: program name 
+            length: 10
+            type: ALPHANUMERIC
+          - name: ZLV1
+            description: Level 1 code
+            length: 3
+            type: ALPHANUMERIC
+          - name: ZLV2
+            description: Level 2 code
+            length: 3
+            type: ALPHANUMERIC
+          - name: ZLV3
+            description: Level 3 code
+            length: 3
+            type: ALPHANUMERIC
+          - name: ZLV4
+            description: Level 4 code
+            length: 3
+            type: ALPHANUMERIC
+          - name: TX40
+            description: description
+            length: 40
+            type: ALPHANUMERIC
+          - name: TX15
+            description: name
+            length: 15
+            type: ALPHANUMERIC
+      - name: LstMITMASU1
+        description: Keys: ITNO
+        type: MULTI
+        inputs:
+          - name: ITNO
+            description: item number
+            length: 15
+            type: ALPHANUMERIC
+            mandatory: false
+        outputs:
+          - name: ITNO
+            description: item number
+            length: 15
+            type: ALPHANUMERIC
+          - name: ITDS
+            description: name
+            length: 60
+            type: ALPHANUMERIC
+      - name: LstMITWHLU2
+        description: Keys: WHLO
+        type: MULTI
+        inputs:
+          - name: WHLO
+            description: warehouse
+            length: 3
+            type: ALPHANUMERIC
+            mandatory: false
+        outputs:
+          - name: WHLO
+            description: warehouse
+            length: 3
+            type: ALPHANUMERIC
+          - name: WHNM
+            description: description
+            length: 36
+            type: ALPHANUMERIC
+          - name: DIVI
+            description: division
+            length: 3
+            type: ALPHANUMERIC
+          - name: FACI
+            description: facility
+            length: 3
+            type: ALPHANUMERIC
+          - name: WHTY
+            description: warehouse type
+            length: 2
+            type: ALPHANUMERIC
