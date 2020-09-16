@@ -12,7 +12,7 @@ public class IssueMethod7Check extends ExtendM3Trigger {
   public void main() {
     //String user = program.getUser()
     //logger.debug("User = " + user)
-    Map<String, String> material = program.getTable("MWOMAT")
+    Map<String, Object> material = program.getTableRecord("MWOMAT")
 
     String WHSL = material.VMWHSL
     String LGTH = material.VMLGTH

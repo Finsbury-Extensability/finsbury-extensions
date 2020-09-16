@@ -43,7 +43,7 @@ apis:
             mandatory: false
         outputs:
           - name: PGNM
-            description: program name 
+            description: program name
             length: 10
             type: ALPHANUMERIC
           - name: ZLV1
@@ -74,7 +74,7 @@ apis:
             mandatory: true
         outputs:
           - name: PGNM
-            description: program name 
+            description: program name
             length: 10
             type: ALPHANUMERIC
           - name: ZLV1
@@ -114,7 +114,7 @@ apis:
             mandatory: true
         outputs:
           - name: PGNM
-            description: program name 
+            description: program name
             length: 10
             type: ALPHANUMERIC
           - name: ZLV1
@@ -163,7 +163,7 @@ apis:
             mandatory: true
         outputs:
           - name: PGNM
-            description: program name 
+            description: program name
             length: 10
             type: ALPHANUMERIC
           - name: ZLV1
@@ -238,3 +238,1038 @@ apis:
             description: warehouse type
             length: 2
             type: ALPHANUMERIC
+  - name: EXT420MI
+    transactions:
+      - name: LstPickersPL
+        description: Ext - Pickers Picklist
+        type: MULTI
+        inputs:
+          - name: WHLO
+            description: warehouse
+            length: 3
+            type: ALPHANUMERIC
+            mandatory: false
+          - name: ZFPI
+            description: From picking status
+            length: 2
+            type: ALPHANUMERIC
+            mandatory: false
+          - name: ZTPI
+            description: To picking status
+            length: 2
+            type: ALPHANUMERIC
+            mandatory: false
+          - name: ZFOR
+            description: From reference order category
+            length: 1
+            type: NUMERICUMERIC
+            mandatory: false
+          - name: ZTOR
+            description: To reference order category
+            length: 1
+            type: NUMERICUMERIC
+            mandatory: false
+          - name: ZFSE
+            description: From picking sequence
+            length: 2
+            type: NUMERICUMERIC
+            mandatory: false
+          - name: ZTSE
+            description: To picking sequence
+            length: 2
+            type: NUMERICUMERIC
+            mandatory: false
+          - name: ZSSE
+            description: Sort by Seq
+            length: 1
+            type: NUMERICUMERIC
+            mandatory: false
+          - name: ZFTP
+            description: From stock zone
+            length: 2
+            type: ALPHANUMERIC
+            mandatory: false
+          - name: ZTTP
+            description: To stock zone
+            length: 2
+            type: ALPHANUMERIC
+            mandatory: false
+          - name: ZLST
+            description: Excl/incl stock zone
+            length: 20
+            type: ALPHANUMERIC
+            mandatory: false
+          - name: TEAM
+            description: picking team
+            length: 5
+            type: ALPHANUMERIC
+            mandatory: false
+          - name: PICK
+            description: picker
+            length: 10
+            type: ALPHANUMERIC
+            mandatory: false
+          - name: DLIX
+            description: Delivery number
+            length: 11
+            type: NUMERICUMERIC
+            mandatory: false
+          - name: PLSX
+            description: picking list suffix
+            length: 3
+            type: NUMERICUMERIC
+            mandatory: false
+          - name: PISE
+            description: warehouse equipment
+            length: 2
+            type: ALPHANUMERIC
+            mandatory: false
+          - name: ZXPN
+            description: Max no of pick line
+            length: 3
+            type: NUMERICUMERIC
+            mandatory: false
+          - name: ZXPL
+            description: Max no of pick list
+            length: 3
+            type: NUMERICUMERIC
+            mandatory: false
+          - name: ROUT
+            description: route
+            length: 6
+            type: ALPHANUMERIC
+            mandatory: false
+          - name: RODN
+            description: route departure
+            length: 3
+            type: NUMERICUMERIC
+            mandatory: false
+          - name: CONN
+            description: shipment
+            length: 7
+            type: NUMERICUMERIC
+            mandatory: false
+          - name: PLRI
+            description: wave nunmber
+            length: 10
+            type: ALPHANUMERIC
+            mandatory: false
+          - name: ZFDD
+            description: From departure date
+            length: 8
+            type: NUMERICUMERIC
+            mandatory: false
+          - name: ZFDH
+            description: From departure time
+            length: 4
+            type: NUMERICUMERIC
+            mandatory: false
+          - name: ZTDD
+            description: To departure date
+            length: 8
+            type: NUMERICUMERIC
+            mandatory: false
+          - name: ZTDH
+            description: To departure time
+            length: 4
+            type: NUMERICUMERIC
+            mandatory: false
+          - name: CONA
+            description: consignee
+            length: 10
+            type: ALPHANUMERIC
+            mandatory: false
+          - name: ZFPA
+            description: From packing status
+            length: 2
+            type: ALPHANUMERIC
+            mandatory: false
+          - name: ZTPA
+            description: To packing status
+            length: 2
+            type: ALPHANUMERIC
+            mandatory: false
+          - name: ZPIS
+            description: Include picking status
+            length: 20
+            type: ALPHANUMERIC
+            mandatory: false
+          - name: ZORC
+            description: Include reference order category
+            length: 10
+            type: NUMERICUMERIC
+            mandatory: false
+          - name: ZPAS
+            description: Include packing status
+            length: 20
+            type: ALPHANUMERIC
+            mandatory: false
+          - name: ZISE
+            description: Include warehouse equipment
+            length: 20
+            type: ALPHANUMERIC
+            mandatory: false
+          - name: ZCPI
+            description: Calculate lines to pick
+            length: 1
+            type: NUMERICUMERIC
+            mandatory: false
+          - name: ZCPA
+            description: Calculate lines to pack
+            length: 1
+            type: NUMERICUMERIC
+            mandatory: false
+          - name: ZCW1
+            description: Calculate weight/vloume to pick
+            length: 1
+            type: NUMERICUMERIC
+            mandatory: false
+          - name: ZCW2
+            description: Calculate weight/vloume to pack
+            length: 1
+            type: NUMERICUMERIC
+            mandatory: false
+          - name: ZPI0
+            description: Exclude if lines to pick = 0
+            length: 1
+            type: NUMERICUMERIC
+            mandatory: false
+          - name: ZPA0
+            description: Exclude if lines to pack = 0
+            length: 1
+            type: NUMERICUMERIC
+            mandatory: false
+          - name: ZFLI
+            description: From lines to pack
+            length: 5
+            type: NUMERICUMERIC
+            mandatory: false
+          - name: ZTLI
+            description: To lines to pick
+            length: 5
+            type: NUMERICUMERIC
+            mandatory: false
+          - name: ZFWI
+            description: From weight to pick
+            length: 15
+            type: NUMERICUMERIC
+            mandatory: false
+          - name: ZTWI
+            description: To weight to pick
+            length: 15
+            type: NUMERICUMERIC
+            mandatory: false
+          - name: ZFVI
+            description: From volume to pick
+            length: 15
+            type: NUMERICUMERIC
+            mandatory: false
+          - name: ZTVI
+            description: To volume to pick
+            length: 15
+            type: NUMERICUMERIC
+            mandatory: false
+          - name: Z
+            description: To weight to pick
+            length: 15
+            type: NUMERICUMERIC
+            mandatory: false
+          - name: ZFLA
+            description: From lines to pack
+            length: 5
+            type: NUMERICUMERIC
+            mandatory: false
+          - name: ZTLA
+            description: To lines to pack
+            length: 5
+            type: NUMERICUMERIC
+            mandatory: false
+          - name: ZFWA
+            description: From weight to pack
+            length: 15
+            type: NUMERICUMERIC
+            mandatory: false
+          - name: ZTWA
+            description: To weight to pack
+            length: 15
+            type: NUMERICUMERIC
+            mandatory: false
+          - name: ZTVA
+            description: To volume to pack
+            length: 15
+            type: NUMERICUMERIC
+            mandatory: false
+          - name: ZFVA
+            description: From volume to pack
+            length: 15
+            type: NUMERICUMERIC
+            mandatory: false
+          - name: ZMLI
+            description: Max lines to pick
+            length: 5
+            type: NUMERICUMERIC
+            mandatory: false
+          - name: ZMLA
+            description: Max lines to pack
+            length: 5
+            type: NUMERICUMERIC
+            mandatory: false
+          - name: RIDN
+            description: order number
+            length: 10
+            type: ALPHANUMERIC
+            mandatory: false
+        outputs:
+          - name: CONO
+            description: company
+            length: 3
+            type: NUMERICUMERIC
+          - name: WHLO
+            description: warehouse
+            length: 3
+            type: ALPHANUMERIC
+          - name: DLIX
+            description: delivery number
+            length: 11
+            type: NUMERICUMERIC
+          - name:PLSX
+            description: picking list suffix
+            length: 3
+            type: NUMERICUMERIC
+          - name: PISS
+            description: picking status
+            length: 2
+            type: ALPHANUMERIC
+          - name: SLTP
+            description: stock zone
+            length: 2
+            type: ALPHANUMERIC
+          - name: PISE
+            description: warehouse equipment
+            length: 2
+            type: ALPHANUMERIC
+          - name: PLTM
+            description: picking time
+            length: 5
+            type: NUMERICUMERIC
+          - name: SEEQ
+            description: picking sequence
+            length: 2
+            type: NUMERICUMERIC
+          - name: ESPD
+            description: estimated pick start date
+            length: 8
+            type: NUMERIC
+          - name: ESPT
+            description: estimated pick start time
+            length: 6
+            type: NUMERIC
+          - name: TEAM
+            description: picking team
+            length: 5
+            type: ALPHANUMERIC
+          - name: PICK
+            description: picker
+            length: 10
+            type: ALPHANUMERIC
+          - name: PLRI
+            description: wave number
+            length: 10
+            type: ALPHANUMERIC
+          - name: WPIC
+            description: workflow picker
+            length: 10
+            type: ALPHANUMERIC
+          - name: ARLD
+            description: actual print date
+            length: 8
+            type: NUMERIC
+          - name: ARLT
+            description: actual print time
+            length: 6
+            type: NUMERIC
+          - name: ARLE
+            description: picking start date
+            length: 8
+            type: NUMERIC
+          - name: ARLF
+            description: picking start time
+            length: 6
+            type: NUMERIC
+          - name: NPLL
+            description: original number of picking list lines
+            length: 5
+            type: NUMERIC
+          - name: NPLR
+            description: number of reported picking lines
+            length: 5
+            type: NUMERIC
+          - name: NPLP
+            description: number of picked picking lines
+            length: 5
+            type: NUMERIC
+          - name: CLOD
+            description: closing date
+            length: 8
+            type: NUMERIC
+          - name: CLOT
+            description: closing time
+            length: 6
+            type: NUMERIC
+          - name: ZDEV
+            description: printer
+            length: 10
+            type: ALPHANUMERIC
+          - name: DEVW
+            description: wave printer
+            length: 10
+            type: ALPHANUMERIC
+          - name: TWLO
+            description: to warehouse
+            length: 3
+            type: ALPHANUMERIC
+          - name: OLIX
+            description: original delivery number
+            length: 11
+            type: NUMERIC
+          - name: RGDT
+            description: entry date
+            length: 8
+            type: NUMERIC
+          - name: RGTM
+            description: entry time
+            length: 6
+            type: NUMERIC
+          - name: LMDT
+            description: change date
+            length: 8
+            type: NUMERIC
+          - name: CHNO
+            description: change number
+            length: 3
+            type: NUMERIC
+          - name: CHID
+            description: changed by
+            length: 10
+            type: ALPHANUMERIC
+          - name: DSDT
+            description: departure date
+            length: 8
+            type: NUMERIC
+          - name: DSHM
+            description: departure time
+            length: 4
+            type: NUMERIC
+          - name: TRDT
+            description: transaction date
+            length: 8
+            type: NUMERIC
+          - name: GRWE
+            description: gross weight
+            length: 15
+            type: NUMERIC
+          - name: PGRS
+            description: delivery status
+            length: 2
+            type: ALPHANUMERIC
+          - name: PIST
+            description: packing status
+            length: 2
+            type: ALPHANUMERIC
+          - name: CUNO
+            description: customer
+            length: 10
+            type: ALPHANUMERIC
+          - name: CUNM
+            description:- name
+            length: 36
+            type: ALPHANUMERIC
+          - name: RORC
+            description: reference order category
+            length: 1
+            type: NUMERIC
+          - name: VLME
+            description: estimated volume
+            length: 15
+            type: NUMERIC
+          - name: VOL3
+            description: volume
+            length: 15
+            type: NUMERIC
+          - name: ROUT
+            description: route
+            length: 6
+            type: ALPHANUMERIC
+          - name: RODN
+            description: route departure
+            length: 3
+            type: NUMERIC
+          - name: ZROD
+            description: Route description
+            length: 40
+            type: ALPHANUMERIC
+          - name: CONN
+            description: shipment
+            length: 7
+            type: NUMERIC
+          - name: LODO
+            description: loading platform
+            length: 10
+            type: ALPHANUMERIC
+          - name: MODL
+            description: delivery method
+            length: 3
+            type: ALPHANUMERIC
+          - name: MODF
+            description: final delivery method
+            length: 3
+            type: ALPHANUMERIC
+          - name: ZLPI
+            description: lines to pick
+            length: 5
+            type: NUMERIC
+          - name: ZWPI
+            description: weight to pick
+            length: 15
+            type: NUMERIC
+          - name: ZVPI
+            description: volume to pick
+            length: 15
+            type: ALPHANUMERIC
+          - name: ZLPA
+            description: lines to pack
+            length: 5
+            type: ALPHANUMERIC
+          - name: ZWPA
+            description: weight to pack
+            length: 15
+            type: NUMERIC
+          - name: ZVPA
+            description: volume to pack
+            length: 15
+            type: NUMERIC
+          - name: PRIO
+            description: priority
+            length: 1
+            type: NUMERIC
+          - name: RIDN
+            description: order number
+            length: 10
+            type: ALPHANUMERIC
+          - name: ZRDN
+            description: order number
+            length: 10
+            type: ALPHANUMERIC
+          - name: ZCND
+            description: customer- name depot
+            length: 30
+            type: ALPHANUMERIC
+  - name: EXT422MI
+    transactions:
+      - name: SelPickDetails
+        description: Ext - Select picking list detail
+        type: MULTI
+        inputs:
+          - name: DLIX
+            description: delivery number
+            length: 11
+            mandatory: false
+            type: NUMERIC
+          - name: PLSX
+            description: picking list suffix
+            length: 3
+            mandatory: false
+            type: NUMERIC
+          - name: PANR
+            description: package number
+            length: 20
+            mandatory: false
+            type: ALPHANUMERIC
+          - name: SSCC
+            description: SSCC number
+            length: 18
+            mandatory: false
+            type: ALPHANUMERIC
+          - name: ITNO
+            description: item number
+            length: 15
+            mandatory: false
+            type: ALPHANUMERIC
+          - name: WHSL
+            description: location
+            length: 10
+            mandatory: false
+            type: ALPHANUMERIC
+          - name: BANO
+            description: lot number
+            length: 20
+            mandatory: false
+            type: ALPHANUMERIC
+          - name: CAMU
+            description: container
+            length: 20
+            mandatory: false
+            type: ALPHANUMERIC
+          - name: PLRN
+            description: reporting number - pick line
+            length: 11
+            mandatory: false
+            type: NUMERIC
+          - name: ZITS
+            description: Incl status
+            length: 20
+            mandatory: false
+            type: ALPHANUMERIC
+          - name: ZISH
+            description: Incl only if line sts = pick list sts
+            length: 1
+            mandatory: false
+            type: NUMERIC
+          - name: ZIRP
+            description: Incl only if remain to pack > 0
+            length: 1
+            mandatory: false
+            type: NUMERIC
+          - name: ZCW1
+            description: Calculate weight/volume to pick
+            length: 1
+            mandatory: false
+            type: NUMERIC
+          - name: ZCW2
+            description: Calculate weight/volume to pack
+            length: 1
+            mandatory: false
+            type: NUMERIC
+          - name: ZL40
+            description: To location status 40
+            length: 1
+            mandatory: false
+            type: NUMERIC
+          - name: ZL50
+            description: To location status 50
+            length: 1
+            mandatory: false
+            type: NUMERIC
+          - name: ZL60
+            description: To location status 60
+            length: 1
+            mandatory: false
+            type: NUMERIC
+          - name: ZCOP
+            description: Consolidate package
+            length: 1
+            mandatory: false
+            type: NUMERIC
+        outputs:
+          - name: CONO
+            description: company
+            length: 3
+            type: NUMERIC
+          - name: WHLO
+            description: warehouse
+            length: 3
+            type: ALPHANUMERIC
+          - name: ITNO
+            description: item number
+            length: 15
+            type: ALPHANUMERIC
+          - name: WHSL
+            description: location
+            length: 10
+            type: ALPHANUMERIC
+          - name: BANO
+            description: lot number
+            length: 20
+            type: ALPHANUMERIC
+          - name: CAMU
+            description: container
+            length: 20
+            type: ALPHANUMERIC
+          - name: REPN
+            description: receiving number
+            length: 10
+            type: NUMERIC
+          - name: TTYP
+            description: stock transaction type
+            length: 2
+            type: NUMERIC
+          - name: RIDN
+            description: order number
+            length: 10
+            type: ALPHANUMERIC
+          - name: RIDO
+            description: order operation
+            length: 6
+            type: NUMERIC
+          - name: RIDI
+            description: delivery number
+            length: 11
+            type: NUMERIC
+          - name: PLSX
+            description: picking list suffix
+            length: 3
+            type: NUMERIC
+          - name: RIDL
+            description: order line
+            length: 6
+            type: NUMERIC
+          - name: STAT
+            description: status
+            length: 2
+            type: ALPHANUMERIC
+          - name: SLTP
+            description: stock zone
+            length: 2
+            type: ALPHANUMERIC
+          - name: PISE
+            description: warehouse equipment
+            length: 2
+            type: ALPHANUMERIC
+          - name: ALQT
+            description: allocated quantity - basic U/M
+            length: 15
+            type: NUMERIC
+          - name: SORT
+            description: sort value
+            length: 20
+            type: ALPHANUMERIC
+          - name: TRFL
+            description: transportation flow
+            length: 10
+            type: ALPHANUMERIC
+          - name: MAAL
+            description: allocation origin
+            length: 1
+            type: ALPHANUMERIC
+          - name: RFTX
+            description: reference text
+            length: 40
+            type: ALPHANUMERIC
+          - name: PGNM
+            description: program name
+            length: 10
+            type: ALPHANUMERIC
+          - name: PLPR
+            description: picking list round
+            length: 7
+            type: NUMERIC
+          - name: PAQT
+            description: packed quantity
+            length: 15
+            type: NUMERIC
+          - name: CAWE
+            description: catch weight
+            length: 15
+            type: NUMERIC
+          - name: FLOC
+            description: from picking location
+            length: 10
+            type: ALPHANUMERIC
+          - name: ZDEV
+            description: printer
+            length: 10
+            type: ALPHANUMERIC
+          - name: STCD
+            description: inventory accounting
+            length: 1
+            type: NUMERIC
+          - name: SOFT
+            description: soft allocation
+            length: 1
+            type: NUMERIC
+          - name: TRQT
+            description: transaction quantity - basic U/M
+            length: 15
+            type: NUMERIC
+          - name: TWSL
+            description: to location
+            length: 10
+            type: ALPHANUMERIC
+          - name: ZTWL
+            description: To location pick line
+            length: 10
+            type: ALPHANUMERIC
+          - name: OEND
+            description: flagged as completed
+            length: 1
+            type: NUMERIC
+          - name: PLRI
+            description: wave number
+            length: 10
+            type: ALPHANUMERIC
+          - name: TRQA
+            description: transaction quantity in alt U/M
+            length: 15
+            type: NUMERIC
+          - name: ALQA
+            description: allocated quantity - alternate U/M
+            length: 15
+            type: NUMERIC
+          - name: ALQN
+            description: allocated quantity - nominal
+            length: 15
+            type: NUMERIC
+          - name: PAQA
+            description: packed quantity - alternate U/M
+            length: 15
+            type: NUMERIC
+          - name: CNNR
+            description: detailed order requirement (DOR) number
+            length: 11
+            type: NUMERIC
+          - name: LSQN
+            description: level sequence number
+            length: 3
+            type: NUMERIC
+          - name: SSEQ
+            description: structure sequence number
+            length: 3
+            type: NUMERIC
+          - name: PLRN
+            description: reporting number - pick line
+            length: 11
+            type: NUMERIC
+          - name: RGDT
+            description: entry date
+            length: 8
+            type: NUMERIC
+          - name: RGTM
+            description: entry time
+            length: 6
+            type: NUMERIC
+          - name: LMDT
+            description: change date
+            length: 8
+            type: NUMERIC
+          - name: CHNO
+            description: change number
+            length: 3
+            type: NUMERIC
+          - name: CHID
+            description: changed by
+            length: 10
+            type: ALPHANUMERIC
+          - name: RIDX
+            description: line suffix
+            length: 3
+            type: NUMERIC
+          - name: ITDS
+            description: name
+            length: 60
+            type: ALPHANUMERIC
+          - name: CONA
+            description: consignee
+            length: 10
+            type: ALPHANUMERIC
+          - name: UNMS
+            description: basic unit of measure
+            length: 3
+            type: ALPHANUMERIC
+          - name: DCCD
+            description: number of decimal places
+            length: 1
+            type: NUMERIC
+          - name: DPLO
+            description: default pack location
+            length: 10
+            type: ALPHANUMERIC
+          - name: DDLO
+            description: default docking location
+            length: 10
+            type: ALPHANUMERIC
+          - name: CUNO
+            description: customer
+            length: 10
+            type: ALPHANUMERIC
+          - name: CUNM
+            description: name
+            length: 36
+            type: ALPHANUMERIC
+          - name: BACD
+            description: lot numbering method
+            length: 1
+            type: NUMERIC
+          - name: INDI
+            description: lot control method
+            length: 1
+            type: NUMERIC
+          - name: COMG
+            description: container management
+            length: 1
+            type: NUMERIC
+          - name: LOBL
+            description: load building
+            length: 1
+            type: NUMERIC
+          - name: LODO
+            description: loading platform
+            length: 10
+            type: ALPHANUMERIC
+          - name: ACTI
+            description: active or catch weight item
+            length: 1
+            type: NUMERIC
+          - name: SCRQ
+            description: scan required
+            length: 1
+            type: NUMERIC
+          - name: GENE
+            description: generic
+            length: 1
+            type: ALPHANUMERIC
+          - name: ZLON
+            description: Logistics U/M On
+            length: 1
+            type: NUMERIC
+          - name: AUCZ
+            description: cartonization U/M
+            length: 3
+            type: ALPHANUMERIC
+          - name: ORRN
+            description: original reporting number - picking line
+            length: 11
+            type: NUMERIC
+          - name: ZWPI
+            description: Weight to pick
+            length: 15
+            type: NUMERIC
+          - name: ZVPI
+            description: Volume to pick
+            length: 15
+            type: NUMERIC
+          - name: ZWPA
+            description: Weight to pack
+            length: 15
+            type: NUMERIC
+          - name: ZVPA
+            description: Volume to pack
+            length: 15
+            type: NUMERIC
+          - name: PRIO
+            description: priority
+            length: 1
+            type: NUMERIC
+          - name: CWUN
+            description: catch weight unit of measure
+            length: 3
+            type: ALPHANUMERIC
+          - name: PANR
+            description: package number
+            length: 20
+            type: ALPHANUMERIC
+          - name: MULS
+            description: place sequence number for unloading
+            length: 5
+            type: NUMERIC
+          - name: SULS
+            description: unloading sequence within place
+            length: 5
+            type: NUMERIC
+          - name: SEEQ
+            description: picking sequence
+            length: 2
+            type: NUMERIC
+          - name: DSDT
+            description: departure date
+            length: 8
+            type: NUMERIC
+          - name: DSHM
+            description: departure time
+            length: 4
+            type: NUMERIC
+          - name: CONN
+            description: shipment
+            length: 7
+            type: NUMERIC
+          - name: ROUT
+            description: route
+            length: 6
+            type: ALPHANUMERIC
+          - name: RODN
+            description: route departure
+            length: 3
+            type: NUMERIC
+          - name: MODL
+            description: delivery method
+            length: 3
+            type: ALPHANUMERIC
+          - name: MODF
+            description: final delivery method
+            length: 3
+            type: ALPHANUMERIC
+          - name: RORC
+            description: reference order category
+            length: 1
+            type: NUMERIC
+          - name: ISEG
+            description: inventory segment
+            length: 10
+            type: ALPHANUMERIC
+          - name: ABFC
+            description: ABC class - frequency
+            length: 1
+            type: ALPHANUMERIC
+          - name: ALUN
+            description: alternate U/M
+            length: 3
+            type: ALPHANUMERIC
+          - name: GRWE
+            description: gross weight
+            length: 15
+            type: NUMERIC
+          - name: NEWE
+            description: net weight
+            length: 15
+            type: NUMERIC
+          - name: VOL3
+            description: volume
+            length: 15
+            type: NUMERIC
+          - name: FCU1
+            description: capacity - free capacity unit
+            length: 15
+            type: NUMERIC
+          - name: FRAG
+            description: fragility
+            length: 2
+            type: NUMERIC
+          - name: ILEN
+            description: length
+            length: 5
+            type: NUMERIC
+          - name: IWID
+            description: width
+            length: 5
+            type: NUMERIC
+          - name: IHEI
+            description: height
+            length: 5
+            type: NUMERIC
+          - name: DIM1
+            description: measurement 1
+            length: 15
+            type: ALPHANUMERIC
+          - name: DIM2
+            description: measurement 2
+            length: 15
+            type: ALPHANUMERIC
+          - name: DIM3
+            description: measurement 3
+            length: 15
+            type: ALPHANUMERIC
+          - name: RSVL
+            description: reserved location
+            length: 10
+            type: ALPHANUMERIC
+          - name: RSVB
+            description: reserved lot number
+            length: 20
+            type: ALPHANUMERIC
+          - name: RSVC
+            description: reserved container
+            length: 20
+            type: ALPHANUMERIC
+          - name: ZMBD
+            description: min best before date
+            length: 8
+            type: NUMERIC
