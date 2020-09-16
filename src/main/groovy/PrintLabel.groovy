@@ -1,3 +1,8 @@
+/**
+ * MMS177.Print Label
+ * Extension for MMS177 to print a pallet label if the session parameter has been set by MMS177.CreateNewPallet
+ * Date	    Changed By  Description
+ */
 public class PrintLabel extends ExtendM3Trigger {
   private final ProgramAPI program
   private final SessionAPI session
@@ -31,6 +36,11 @@ public class PrintLabel extends ExtendM3Trigger {
     }
   }
 
+  /**
+   * Print pallet label
+   * @param
+   * @return result
+   */
   public String PrtLabel(String WHLO, String ITNO, String WHSL, String BANO, String CAMU) {
     def parameters = ["WHLO": WHLO, "ITNO":ITNO, "WHSL": WHSL, "BANO": BANO, "CAMU": CAMU]
     logtext("PrintLabel parms ${parameters}", true)

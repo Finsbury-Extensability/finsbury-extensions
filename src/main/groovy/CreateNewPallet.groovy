@@ -1,3 +1,14 @@
+/**
+ * MMS177.CreateNewPallet
+ * Extension for MMS177 to trigger API's to perform the stock movements as certain scenarios don't work in MMS177.
+ * Also will populate the to container number if the container management type is 7 and the to location is container managed.
+ * If a new pallet is created then a session parm will be set to trigger a label to be printed in MMS177.PrintLabel
+ *
+ * Scenario 1 - From and to locations container managed and no trans qty entered then use MMS850MI/AddPackMove
+ * Scenario 2 = From location container managed but to location istn't use MMS850MI/AddMove
+ *
+ * Date	    Changed By  Description
+ */
 public class CreateNewPallet extends ExtendM3Trigger {
   private final ProgramAPI program
   private final SessionAPI session
@@ -98,6 +109,13 @@ public class CreateNewPallet extends ExtendM3Trigger {
     session.parameters.put("newPallet", newPallet)
   }
 
+
+
+  /**
+   * Set latest moved fields on display
+   * @param
+   * @return
+   */
   public void SetLatestMoved (String WHLO, String WHNM, String ITNO, String ITDS, String WHSL, String SLDS,
                               String BANO, String CAMU, String TRQT, String MNUN) {
     interactive.display.fields.put("WLWHLO", WHLO)
@@ -114,6 +132,12 @@ public class CreateNewPallet extends ExtendM3Trigger {
     PrtLabel(WHLO, ITNO, WHSL, BANO, CAMU)
   }
 
+
+  /**
+   * Get item
+   * @param
+   * @return result
+   */
   public Map<String, String> GetItem(String ITNO) {
     def parameters = ["ITNO":ITNO]
     logtext("GetItem parms ${parameters}", true)
@@ -128,6 +152,12 @@ public class CreateNewPallet extends ExtendM3Trigger {
     return result
   }
 
+
+  /**
+   * Get item warehouse
+   * @param
+   * @return result
+   */
   public  Map<String, String> GetItmWhs(String WHLO, String ITNO) {
     def parameters = ["WHLO":WHLO, "ITNO":ITNO]
     logtext("GetItmWhs parms ${parameters}", true)
@@ -142,6 +172,11 @@ public class CreateNewPallet extends ExtendM3Trigger {
     return result
   }
 
+  /**
+   * Get location
+   * @param
+   * @return result
+   */
   public Map<String, String> GetLocation(String WHLO, String WHSL) {
     def parameters = ["WHLO":WHLO, "WHSL":WHSL]
     logtext("GetLocation parms ${parameters}", true)
@@ -156,6 +191,11 @@ public class CreateNewPallet extends ExtendM3Trigger {
     return result
   }
 
+/**
+ * Get balance id
+ * @param
+ * @return result
+ */
   public Map<String, String> GetBalanceID(String WHLO, String ITNO, String WHSL, String BANO, String CAMU) {
     def parameters = ["WHLO":WHLO, "ITNO":ITNO, "WHSL":WHSL, "BANO":BANO, "CAMU":CAMU]
     logtext("GetBalanceID parms ${parameters}", true)
@@ -170,6 +210,11 @@ public class CreateNewPallet extends ExtendM3Trigger {
     return result
   }
 
+  /**
+   * Get packaging
+   * @param
+   * @return result
+   */
   public String GetPackaging(String ITNO) {
     def parameters = ["ITNO":ITNO, "TRQT":"99999"]
     logtext("GetPackaging parms ${parameters}", true)
@@ -186,6 +231,11 @@ public class CreateNewPallet extends ExtendM3Trigger {
     return result
   }
 
+  /**
+   * Get get container
+   * @param
+   * @return result
+   */
   public String GetContainer(String PACT) {
     def parameters = ["PACT":PACT]
     logtext("GetContainer parms ${parameters}", true)
@@ -202,6 +252,11 @@ public class CreateNewPallet extends ExtendM3Trigger {
     return result
   }
 
+  /**
+   * Print pallet label
+   * @param
+   * @return result
+   */
   public String PrtLabel(String WHLO, String ITNO, String WHSL, String BANO, String CAMU) {
     def parameters = ["WHLO": WHLO, "ITNO":ITNO, "WHSL": WHSL, "BANO": BANO, "CAMU": CAMU]
     logtext("PrintLabel parms ${parameters}", true)
@@ -216,6 +271,11 @@ public class CreateNewPallet extends ExtendM3Trigger {
     return result
   }
 
+  /**
+   * Add pack move
+   * @param
+   * @return result
+   */
   public Map<String, String> AddPackMove(String WHLO, String PANR, String TWSL) {
     String PRFL = "*EXE"
     String E0PA = "WS"
@@ -232,6 +292,11 @@ public class CreateNewPallet extends ExtendM3Trigger {
     return result
   }
 
+/**
+ * Add move
+ * @param
+ * @return result
+ */
   public Map<String, String> AddMove(String WHLO, String WHSL, String ITNO, String BANO,
                                      String CAMU, String QLQT, String TWSL, String TOCA) {
     String PRFL = "*EXE"

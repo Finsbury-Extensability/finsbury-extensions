@@ -1,3 +1,8 @@
+/**
+ * EXT001MI.LstMITMASU1
+ * Extension API to list items at status 20
+ * Date	    Changed By  Description
+ */
 public class LstMITMASU1 extends ExtendM3Transaction {
   private final MIAPI mi;
   private final DatabaseAPI database;

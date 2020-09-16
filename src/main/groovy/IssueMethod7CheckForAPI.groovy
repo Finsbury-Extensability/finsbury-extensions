@@ -1,3 +1,9 @@
+/**
+ * PMS060MI.IssueMethod7CheckForAPI
+ * Extension for PMS060MI to validate the location entered matches is the same as the one on the material line
+ * if the length and width fields are 7.
+ * Date	    Changed By  Description
+ */
 public class IssueMethod7CheckForAPI extends ExtendM3Trigger {
   private final TransactionAPI transaction;
   private final DatabaseAPI database;

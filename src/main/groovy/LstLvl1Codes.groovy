@@ -1,3 +1,9 @@
+/**
+ * EXT001MI.LstLvl1Codes
+ * Extension API to list the level 1 reason codes these are stored in either CSYTAB or MWDSTC dependent on the program
+ * they are required for.
+ * Date	    Changed By  Description
+ */
 public class LstLvl1Codes extends ExtendM3Transaction {
   private final MIAPI mi;
   private final DatabaseAPI database;

@@ -1,3 +1,8 @@
+/**
+ * EXT001MI.LstLvl3Codes
+ * Extension API to list the level 3 reason codes stored in CUGEX1
+ * Date	    Changed By  Description
+ */
 public class LstLvl3Codes extends ExtendM3Transaction {
   private final MIAPI mi;
   private final DatabaseAPI database;

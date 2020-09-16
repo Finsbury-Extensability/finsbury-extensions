@@ -1,3 +1,8 @@
+/**
+ * EXT001MI.LstMITWHLU2
+ * Extension API to list warehouse where the warehouse type is "Z4"
+ * Date	    Changed By  Description
+ */
 public class LstMITWHLU2 extends ExtendM3Transaction {
   private final MIAPI mi;
   private final DatabaseAPI database;
