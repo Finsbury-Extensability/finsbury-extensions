@@ -135,8 +135,8 @@ public class CreateNewPallet extends ExtendM3Trigger {
 
   /**
    * Get item
-   * @param
-   * @return result
+   * @param ITNO item number
+   * @return result result of API call otherwise will contain error
    */
   public Map<String, String> GetItem(String ITNO) {
     def parameters = ["ITNO":ITNO]
@@ -155,8 +155,9 @@ public class CreateNewPallet extends ExtendM3Trigger {
 
   /**
    * Get item warehouse
-   * @param
-   * @return result
+   * @param WHLO warehouse
+   * @param ITNO item number
+   * @return result result of API call otherwise will contain error
    */
   public  Map<String, String> GetItmWhs(String WHLO, String ITNO) {
     def parameters = ["WHLO":WHLO, "ITNO":ITNO]
@@ -174,8 +175,9 @@ public class CreateNewPallet extends ExtendM3Trigger {
 
   /**
    * Get location
-   * @param
-   * @return result
+   * @param WHLO warehouse
+   * @param WHSL location
+   * @return result result of API call otherwise will contain error
    */
   public Map<String, String> GetLocation(String WHLO, String WHSL) {
     def parameters = ["WHLO":WHLO, "WHSL":WHSL]
@@ -193,8 +195,12 @@ public class CreateNewPallet extends ExtendM3Trigger {
 
 /**
  * Get balance id
- * @param
- * @return result
+ * @param WHLO warehouse
+ * @param ITNO item number
+ * @param WHSL location
+ * @param BANO lot number
+ * @param CAMU container
+ * @return result result of API call otherwise will contain error
  */
   public Map<String, String> GetBalanceID(String WHLO, String ITNO, String WHSL, String BANO, String CAMU) {
     def parameters = ["WHLO":WHLO, "ITNO":ITNO, "WHSL":WHSL, "BANO":BANO, "CAMU":CAMU]
@@ -212,8 +218,8 @@ public class CreateNewPallet extends ExtendM3Trigger {
 
   /**
    * Get packaging
-   * @param
-   * @return result
+   * @param ITNO item number
+   * @return result result of API call otherwise will contain error
    */
   public String GetPackaging(String ITNO) {
     def parameters = ["ITNO":ITNO, "TRQT":"99999"]
@@ -233,8 +239,8 @@ public class CreateNewPallet extends ExtendM3Trigger {
 
   /**
    * Get get container
-   * @param
-   * @return result
+   * @param PACT pacakaging
+   * @return result result of API call otherwise will contain error
    */
   public String GetContainer(String PACT) {
     def parameters = ["PACT":PACT]
@@ -254,8 +260,12 @@ public class CreateNewPallet extends ExtendM3Trigger {
 
   /**
    * Print pallet label
-   * @param
-   * @return result
+   * @param WHLO warehouse
+   * @param ITNO item number
+   * @param WHSL location
+   * @param BANO lot number
+   * @param CAMO container
+   * @return result result of API call otherwise will contain error
    */
   public String PrtLabel(String WHLO, String ITNO, String WHSL, String BANO, String CAMU) {
     def parameters = ["WHLO": WHLO, "ITNO":ITNO, "WHSL": WHSL, "BANO": BANO, "CAMU": CAMU]
@@ -273,8 +283,10 @@ public class CreateNewPallet extends ExtendM3Trigger {
 
   /**
    * Add pack move
-   * @param
-   * @return result
+   * @param WHLO warehouse
+   * @param PANR package number
+   * @param TWSL to location
+   * @return result result of API call otherwise will contain error
    */
   public Map<String, String> AddPackMove(String WHLO, String PANR, String TWSL) {
     String PRFL = "*EXE"
@@ -294,8 +306,15 @@ public class CreateNewPallet extends ExtendM3Trigger {
 
 /**
  * Add move
- * @param
- * @return result
+ * @param WHLO warehouse
+ * @param WHSL location
+ * @param ITNO item number
+ * @param BANO lot number
+ * @param CAMU container
+ * @param QLQT quantity
+ * @param TWSL to location
+ * @prarm TOCA to container
+ * @return result result of API call otherwise will contain error
  */
   public Map<String, String> AddMove(String WHLO, String WHSL, String ITNO, String BANO,
                                      String CAMU, String QLQT, String TWSL, String TOCA) {

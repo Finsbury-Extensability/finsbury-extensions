@@ -38,8 +38,12 @@ public class PrintLabel extends ExtendM3Trigger {
 
   /**
    * Print pallet label
-   * @param
-   * @return result
+   * @param WHLO warehouse
+   * @param ITNO item number
+   * @param WHSL location
+   * @param BANO lot number
+   * @param CAMU container
+   * @return result result of API call otherwise will contain error
    */
   public String PrtLabel(String WHLO, String ITNO, String WHSL, String BANO, String CAMU) {
     def parameters = ["WHLO": WHLO, "ITNO":ITNO, "WHSL": WHSL, "BANO": BANO, "CAMU": CAMU]
