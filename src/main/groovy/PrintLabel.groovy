@@ -64,11 +64,7 @@ public class PrintLabel extends ExtendM3Trigger {
     if (log == false) {
       return
     }
-    logger.warning("Warning $text")
     logger.debug("Debug $text")
-    logger.error("Error $text")
-    logger.trace("Trace $text")
-    logger.info("Info $text")
 
     //interactive.showCustomInfo("Proof $text ran the extension")
   }

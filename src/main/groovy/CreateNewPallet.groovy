@@ -339,10 +339,6 @@ public class CreateNewPallet extends ExtendM3Trigger {
     if (log == false) {
       return
     }
-    //logger.warning("Warning $text")
     logger.debug("Debug $text")
-    //logger.error("Error $text")
-    logger.trace("Trace $text")
-    //logger.info("Info $text")
   }
 }
