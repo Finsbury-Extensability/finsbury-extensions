@@ -113,7 +113,16 @@ public class CreateNewPallet extends ExtendM3Trigger {
 
   /**
    * Set latest moved fields on display
-   * @param
+   * @param WHLO warehouse
+   * @param WHNM warehouse name
+   * @param ITNO item number
+   * @param ITDS name
+   * @param WHSL location
+   * @param SLDS location name
+   * @param BANO lot number
+   * @param CAMU container
+   * @param TRQT quantity
+   * @param MNUN main unit
    * @return
    */
   public void SetLatestMoved (String WHLO, String WHNM, String ITNO, String ITDS, String WHSL, String SLDS,
