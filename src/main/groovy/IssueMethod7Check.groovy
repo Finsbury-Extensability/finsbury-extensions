@@ -16,16 +16,11 @@ public class IssueMethod7Check extends ExtendM3Trigger {
   }
 
   public void main() {
-    //String user = program.getUser()
-    //logger.debug("User = " + user)
     Map<String, Object> material = program.getTableRecord("MWOMAT")
 
     String WHSL = material.VMWHSL
-    String LGTH = material.VMLGTH
-    String WDTH = material.VMWDTH
     String scrWHSL = interactive.display.fields.get("WMWHSL")
-
-    if (LGTH == "0000007" && WDTH == "0000007" && scrWHSL != WHSL) {
+    if (material.VMLGTH == 7 && material.VMWDTH == 7 && scrWHSL != WHSL) {
       interactive.showCustomError("WMWHSL", "Location must equal " + WHSL + " for this item")
     }
   }
