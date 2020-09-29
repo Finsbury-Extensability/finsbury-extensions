@@ -16,7 +16,7 @@ public class LstMITMASU1 extends ExtendM3Transaction {
 
   public void main() {
     String item = mi.inData.ITNO
-    String status = mi.inData.STAT
+    String status = "20"
 
     DBAction queryMITMAS = database.table("MITMAS").index("20").selection("MMCONO", "MMSTAT", "MMITDS").build()
     DBContainer containerMITMAS = queryMITMAS.getContainer()
