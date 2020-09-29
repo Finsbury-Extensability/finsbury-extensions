@@ -15,7 +15,7 @@ public class SelPickDetail extends ExtendM3Transaction {
   private final LoggerAPI logger
   private final ProgramAPI program
 
-  private final String dfmt
+  private final String dfmt = "yyyyMMdd"
 
   public SelPickDetail(MIAPI mi, DatabaseAPI database, MICallerAPI miCaller, LoggerAPI logger, ProgramAPI program) {
     this.mi = mi
@@ -23,7 +23,6 @@ public class SelPickDetail extends ExtendM3Transaction {
     this.miCaller = miCaller
     this.logger = logger
     this.program = program
-    this.dfmt = "yyyyMMdd"
   }
 
   public void main() {
