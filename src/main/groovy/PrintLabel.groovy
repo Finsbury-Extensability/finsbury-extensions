@@ -20,10 +20,10 @@ public class PrintLabel extends ExtendM3Trigger {
 
   public void main() {
 
-    String newPallet = session.parameters.get("newPallet")
+    boolean newPallet = session.parameters.get("newPallet")
 
     logtext("newPallet = " + newPallet, true)
-    if (newPallet == "true") {
+    if (newPallet) {
       String WHLO = interactive.display.fields.WWWHLO
       String ITNO = interactive.display.fields.WWITNO
       String WHSL = interactive.display.fields.WWTWSL

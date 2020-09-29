@@ -56,7 +56,7 @@ public class CreateNewPallet extends ExtendM3Trigger {
     ToLocation = GetLocation(WHLO, TWSL)
     BalID = GetBalanceID(WHLO, ITNO, WHSL, BANO, CAMU)
 
-    String newPallet = "false"
+    boolean newPallet = false
 
     if (ItmWhs.COMG == "7") {
       if (ToLocation.CMNG == "1") {
@@ -73,7 +73,7 @@ public class CreateNewPallet extends ExtendM3Trigger {
             interactive.display.fields.put("WWTOCA", TOCA)
           }
         }
-        newPallet = "true"
+        newPallet = true
       }
 
       // If both from and to locations are container managed then execute MMS850MI/AddPackMove

@@ -17,7 +17,7 @@ public class LstMITWHLU2 extends ExtendM3Transaction {
   public void main() {
     String warehouse = mi.inData.WHLO
 
-    DBAction queryMITWHL = database.table("MITWHL").index("00").selection("MWCONO", "MWWHNM", "MWDIVI", "MWFACI", "MWWHTY").build()
+    DBAction queryMITWHL = database.table("MITWHL").index("U2").selection("MWCONO", "MWWHNM", "MWDIVI", "MWFACI", "MWWHTY").build()
     DBContainer containerMITWHL = queryMITWHL.getContainer()
     containerMITWHL.set("MWCONO", program.LDAZD.CONO)
     containerMITWHL.set("MWWHLO", warehouse)

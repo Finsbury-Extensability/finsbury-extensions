@@ -24,9 +24,10 @@ public class IssueMethod7CheckForAPI extends ExtendM3Trigger {
     String inMSEQ = transaction.parameters.get("MSEQ")
     String inMTNO = transaction.parameters.get("MTNO")
 
-    DBAction HED55 = database.table("MWOHED").index("55").selectAllFields().build()
+    DBAction HED55 = database.table("MWOHED").index("55").selection("VHCONO", "VHFACI", "VHPRNO", "VHMFNO").build()
     DBContainer HEDcntr = HED55.getContainer()
-    DBAction MAT50 = database.table("MWOMAT").index("50").selectAllFields().build()
+    DBAction MAT50 = database.table("MWOMAT").index("50").selection("VMCONO", "VMFACI", "VMPRNO", "VMMFNO", "VMWOSQ",
+      "VMMTNO", "VMWHSL", "VMLGTH", "VMWDTH", "VMSPMT", "VMPYPR").build()
     DBAction MAT30 = database.table("MWOMAT").index("30").selectAllFields().build()
     DBAction MAT00 = database.table("MWOMAT").index("00").selectAllFields().build()
     DBContainer MATcntr = MAT50.getContainer()
@@ -68,7 +69,6 @@ public class IssueMethod7CheckForAPI extends ExtendM3Trigger {
 
   Closure<?> handler = {DBContainer result ->
     String inWHSL = transaction.parameters.get("WHSL")
-    String WOSQ = result.getLong("VMWOSQ").toString()
     String WHSL = result.getString("VMWHSL")
     int LGTH = result.getInt("VMLGTH")
     int WDTH = result.getInt("VMWDTH")
