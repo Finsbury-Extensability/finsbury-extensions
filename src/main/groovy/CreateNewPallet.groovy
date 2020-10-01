@@ -8,6 +8,7 @@
  * Scenario 2 = From location container managed but to location istn't use MMS850MI/AddMove
  *
  * Date	    Changed By  Description
+ * 20201001 NJOHNSON    Add method to clear input fields after calling API's
  */
 public class CreateNewPallet extends ExtendM3Trigger {
   private final ProgramAPI program
@@ -109,7 +110,19 @@ public class CreateNewPallet extends ExtendM3Trigger {
     session.parameters.put("newPallet", newPallet)
   }
 
-
+  /**
+   * Clear input fields on display
+   * @param
+   * @return
+   */
+  public void ClearInputFields () {
+    interactive.display.fields.put("WWCAMU", "")
+    interactive.display.fields.put("WWTRQM", "")
+    interactive.display.fields.put("WWTRQT", "")
+    interactive.display.fields.put("WWCAWE", "")
+    interactive.display.fields.put("WWTWSL", "")
+    interactive.display.fields.put("WWTOCA", "")
+  }
 
   /**
    * Set latest moved fields on display
@@ -127,6 +140,7 @@ public class CreateNewPallet extends ExtendM3Trigger {
    */
   public void SetLatestMoved (String WHLO, String WHNM, String ITNO, String ITDS, String WHSL, String SLDS,
                               String BANO, String CAMU, String TRQT, String MNUN) {
+    ClearInputFields()
     interactive.display.fields.put("WLWHLO", WHLO)
     interactive.display.fields.put("WLWHNM", WHNM)
     interactive.display.fields.put("WLITNO", ITNO)
