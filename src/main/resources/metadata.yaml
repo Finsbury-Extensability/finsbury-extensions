@@ -191,7 +191,7 @@ apis:
             length: 15
             type: ALPHANUMERIC
       - name: LstMITMASU1
-        description: Keys: ITNO
+        description: Keys- ITNO
         type: MULTI
         inputs:
           - name: ITNO
@@ -209,7 +209,7 @@ apis:
             length: 60
             type: ALPHANUMERIC
       - name: LstMITWHLU2
-        description: Keys: WHLO
+        description: Keys- WHLO
         type: MULTI
         inputs:
           - name: WHLO
