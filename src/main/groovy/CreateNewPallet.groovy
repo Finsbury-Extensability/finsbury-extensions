@@ -9,6 +9,7 @@
  *
  * Date	    Changed By  Description
  * 20201001 NJOHNSON    Add method to clear input fields after calling API's
+ * 20201019 NJOHNSON    When checking for packaging also check with a quantity of 999999
  */
 public class CreateNewPallet extends ExtendM3Trigger {
   private final ProgramAPI program
@@ -62,11 +63,16 @@ public class CreateNewPallet extends ExtendM3Trigger {
     if (ItmWhs.COMG == "7") {
       if (ToLocation.CMNG == "1") {
         if (TOCA.isBlank()) {
-          PACT = GetPackaging(ITNO)
+          //PACT = GetPackaging(ITNO) //D 20201019
+          PACT = GetPackaging(ITNO, "99999") //A 20201019
           logtext("PACT= ${PACT}", true)
           if (PACT.isEmpty()) {
-            interactive.showCustomError("WWITNO", "No packaging record found for item container cannot be auto created")
-            return;
+            PACT = GetPackaging(ITNO, "999999") //A 20201019
+            logtext("PACT= ${PACT}", true) //A 20201019
+            if (PACT.isEmpty()) { //A 20201019
+              interactive.showCustomError("WWITNO", "No packaging record found for item container cannot be auto created")
+              return;
+            } //A 20201019
           }
           TOCA = GetContainer(PACT)
           logtext("TOCA= ${TOCA}", true)
@@ -244,8 +250,10 @@ public class CreateNewPallet extends ExtendM3Trigger {
    * @param ITNO item number
    * @return result result of API call otherwise will contain error
    */
-  public String GetPackaging(String ITNO) {
-    def parameters = ["ITNO":ITNO, "TRQT":"99999"]
+  //public String GetPackaging(String ITNO) { //D 20201019
+  public String GetPackaging(String ITNO, String TRQT) { //A 20201019
+    //def parameters = ["ITNO":ITNO, "TRQT":"99999"] //D 20201019
+    def parameters = ["ITNO":ITNO, "TRQT":TRQT] //A 20201019
     logtext("GetPackaging parms ${parameters}", true)
     String result = ""
     Closure<?> handler = { Map<String, String> response ->
