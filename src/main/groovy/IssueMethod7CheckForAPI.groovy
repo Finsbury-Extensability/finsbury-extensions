@@ -3,6 +3,7 @@
  * Extension for PMS060MI to validate the location entered matches is the same as the one on the material line
  * if the length and width fields are 7.
  * Date	    Changed By  Description
+ * 20201025 NJOHNSON    Error using MTNO instead of MSEQ to set key values.
  */
 public class IssueMethod7CheckForAPI extends ExtendM3Trigger {
   private final TransactionAPI transaction;
@@ -60,7 +61,8 @@ public class IssueMethod7CheckForAPI extends ExtendM3Trigger {
           MATcntr.set("VMFACI", inFACI)
           MATcntr.set("VMPRNO", inPRNO)
           MATcntr.set("VMMFNO", inMFNO)
-          MATcntr.set("VMMSEQ", inMTNO.toInteger())
+          //MATcntr.set("VMMSEQ", inMTNO.toInteger()) //D 20201025
+          MATcntr.set("VMMSEQ", inMSEQ.toInteger()) //A 20201025
           MAT00.readAll(MATcntr, 5, handler)
         }
       }
