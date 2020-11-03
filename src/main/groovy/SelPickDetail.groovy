@@ -3,6 +3,7 @@
  * Extension api for MWS422MI.SelPickDetail
  * Date	    Changed By  Description
  * 20200820	JEACAR01    Add ZMBD - Minimum best before days
+ * 20201102 NJOHNSON    Remove .trim on input fields as this causes errors if fields are null
  */
 import java.time.LocalDate
 import java.time.format.DateTimeFormatter
@@ -149,24 +150,24 @@ public class SelPickDetail extends ExtendM3Transaction {
     }
 
 
-    def params = [ "DLIX": mi.inData.get("DLIX").trim(),
-                   "PLSX": mi.inData.get("PLSX").trim(),
-                   "PANR": mi.inData.get("PANR").trim(),
-                   "SSCC": mi.inData.get("SSCC").trim(),
-                   "ITNO": mi.inData.get("ITNO").trim(),
-                   "WHSL": mi.inData.get("WHSL").trim(),
-                   "BANO": mi.inData.get("BANO").trim(),
-                   "CAMU": mi.inData.get("CAMU").trim(),
-                   "PLRN": mi.inData.get("PLRN").trim(),
-                   "ISTS": mi.inData.get("ZITS").trim(),
-                   "ISTH": mi.inData.get("ZISH").trim(),
-                   "IRPK": mi.inData.get("ZIRP").trim(),
-                   "CWV1": mi.inData.get("ZCW1").trim(),
-                   "CWV2": mi.inData.get("ZCW2").trim(),
-                   "TL40": mi.inData.get("ZL40").trim(),
-                   "TL50": mi.inData.get("ZL50").trim(),
-                   "TL60": mi.inData.get("ZL60").trim(),
-                   "CONP": mi.inData.get("ZCOP").trim(),
+    def params = [ "DLIX": mi.inData.get("DLIX"),
+                   "PLSX": mi.inData.get("PLSX"),
+                   "PANR": mi.inData.get("PANR"),
+                   "SSCC": mi.inData.get("SSCC"),
+                   "ITNO": mi.inData.get("ITNO"),
+                   "WHSL": mi.inData.get("WHSL"),
+                   "BANO": mi.inData.get("BANO"),
+                   "CAMU": mi.inData.get("CAMU"),
+                   "PLRN": mi.inData.get("PLRN"),
+                   "ISTS": mi.inData.get("ZITS"),
+                   "ISTH": mi.inData.get("ZISH"),
+                   "IRPK": mi.inData.get("ZIRP"),
+                   "CWV1": mi.inData.get("ZCW1"),
+                   "CWV2": mi.inData.get("ZCW2"),
+                   "TL40": mi.inData.get("ZL40"),
+                   "TL50": mi.inData.get("ZL50"),
+                   "TL60": mi.inData.get("ZL60"),
+                   "CONP": mi.inData.get("ZCOP"),
     ]
 
     miCaller.call("MWS422MI", "SelPickDetail", params, callback)

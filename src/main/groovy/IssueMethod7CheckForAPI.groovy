@@ -25,6 +25,25 @@ public class IssueMethod7CheckForAPI extends ExtendM3Trigger {
     String inMSEQ = transaction.parameters.get("MSEQ")
     String inMTNO = transaction.parameters.get("MTNO")
 
+    if (inWOSQ == null) {
+      inWOSQ = ""
+    }
+    if (inFACI == null) {
+      inFACI = ""
+    }
+    if (inPRNO == null) {
+      inPRNO = ""
+    }
+    if (inMFNO == null) {
+      inMFNO = ""
+    }
+    if (inMSEQ == null) {
+      inMSEQ = ""
+    }
+    if (inMTNO == null) {
+      inMTNO = ""
+    }
+
     DBAction HED55 = database.table("MWOHED").index("55").selection("VHCONO", "VHFACI", "VHPRNO", "VHMFNO").build()
     DBContainer HEDcntr = HED55.getContainer()
     DBAction MAT50 = database.table("MWOMAT").index("50").selection("VMCONO", "VMFACI", "VMPRNO", "VMMFNO", "VMWOSQ",

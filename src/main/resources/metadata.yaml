@@ -1,5 +1,17 @@
 metadataVersion: 1
 extensions:
+  - name: AutoPopulateNewLot
+    triggers:
+      - type: METHOD
+        program: MMS130
+        method: PECHK
+        advice: PRE
+  - name: Reclassify
+    triggers:
+      - type: METHOD
+        program: MMS130
+        method: PEUPD
+        advice: POST
   - name: CreateNewPallet
     triggers:
       - type: METHOD
