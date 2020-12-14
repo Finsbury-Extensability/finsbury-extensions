@@ -18,9 +18,9 @@ public class IssueMethod7Check extends ExtendM3Trigger {
   public void main() {
     Map<String, Object> material = program.getTableRecord("MWOMAT")
 
-    String WHSL = material.VMWHSL
-    String scrWHSL = interactive.display.fields.get("WMWHSL")
-    if (material.VMLGTH == 7 && material.VMWDTH == 7 && scrWHSL != WHSL) {
+    String WHSL = material.VMWHSL.toString().trim()
+    String scrWHSL = interactive.display.fields.get("WMWHSL").toString().trim()
+    if (material.VMLGTH == 7 && material.VMWDTH == 7 && !scrWHSL.equals(WHSL)) {
       interactive.showCustomError("WMWHSL", "Location must equal " + WHSL + " for this item")
     }
   }
